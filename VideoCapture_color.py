@@ -2,10 +2,15 @@
 import cv2
 
 cap = cv2.VideoCapture(0)
+cap.set(3, 1280)
+cap.set(4, 720)
+cap.set(5, 25)
 
 # Define the codec and create VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('testing_4.avi', fourcc, 20.0, (640, 480))  # setting it to 25 fps, 720p video playback fails :(
+fps = 25
+res = (1280, 720)
+out = cv2.VideoWriter('testing_4.avi', fourcc, fps, res)  # setting it to 25 fps, 720p video playback fails :(
 # works on default 20 fps, 480 p
 
 while cap.isOpened():
