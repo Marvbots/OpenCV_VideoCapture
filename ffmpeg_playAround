@@ -148,6 +148,19 @@ You will see a bunch of information about the recorded / displayed video. For me
 
 
 
+
+%%%%%%% 
+Luca's comments:
+
+works fine running (5) with 1280x720 res, 30 fps (with no display) --> video looks really good!
+but crashes while running (7)
+
+%%%%%%%
+
+
+
+
+
 (8) Low-latency video recording + display. Added "-tune zerolatency" and "-fflags nobuffer":
 
 stim@stim-PC:~$ ffmpeg -f v4l2 -framerate 30 -input_format mjpeg -video_size 960x540 -i /dev/video0 -map 0 -c:v libx264 -tune zerolatency -f tee "output.mkv|[f=nut]pipe:" | ffplay -fflags nobuffer pipe:
